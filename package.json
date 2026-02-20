@@ -1,9 +1,9 @@
 {
-  "name": "just",
-  "displayName": "just",
+  "name": "justfile",
+  "displayName": "justfile",
   "description": "Provides syntax and recipe launcher for Just scripts.",
-  "version": "2.0.0",
-  "publisher": "skellock",
+  "version": "2.1.0",
+  "publisher": "sclu1034",
   "private": true,
   "license": "MIT",
   "icon": "images/robot.png",
@@ -20,14 +20,14 @@
     "launch"
   ],
   "repository": {
-    "url": "https://github.com/skellock/vscode-just.git"
+    "url": "https://github.com/sclu1034/vscode-just.git"
   },
   "bugs": {
-    "url": "https://github.com/skellock/vscode-just/issues"
+    "url": "https://github.com/sclu1034/vscode-just/issues"
   },
-  "homepage": "https://github.com/skellock/vscode-just",
+  "homepage": "https://github.com/sclu1034/vscode-just",
   "categories": [
-    "Languages",
+    "Programming Languages",
     "Other"
   ],
   "main": "./out/extension",
@@ -59,7 +59,15 @@
       {
         "language": "just",
         "scopeName": "source.just",
-        "path": "./syntaxes/just.tmLanguage.json"
+        "path": "./syntaxes/just.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.js": "javascript",
+          "meta.embedded.block.lua": "lua",
+          "meta.embedded.block.perl": "perl",
+          "meta.embedded.block.ruby": "ruby",
+          "meta.embedded.block.python": "python",
+          "meta.embedded.block.shellscript": "shellscript"
+        }
       }
     ]
   },
@@ -71,14 +79,12 @@
     "test": "npm run compile && node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "@types/execa": "^0.8.0",
-    "@types/mocha": "^2.2.42",
-    "@types/node": "^7.0.43",
-    "prettier": "^1.9.1",
-    "typescript": "^2.6.1",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.13",
+    "typescript": "^4.5.5",
     "vscode": "^1.1.6"
   },
   "dependencies": {
-    "execa": "^0.8.0"
+    "execa": "^6.0.0"
   }
 }
